@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 # create first views
 from django.http import JsonResponse
 
-# create rest_api response
-from rest_framework.decorators import api_view
+# create rest_api response, decorators for viw and permissions classes for auth
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
 # for admin
@@ -15,6 +15,11 @@ from django.db.models import Q
 
 # create APIView base
 from rest_framework.views import APIView
+
+# authentification JWT
+from rest_framework.permissions import IsAuthenticated
+
+
 
 # Create your views here.
 
@@ -37,6 +42,8 @@ def endpoints(request):
 
 
 @api_view(['GET', 'POST'])
+# authentification for permission
+@permission_classes([IsAuthenticated])
 # another view
 def advocate_list(request):
     # data = ['Alex', 'Max', 'John']
@@ -136,6 +143,6 @@ class AdvocateDetail(APIView):
 # Compony model
 @api_view(['GET'])
 def companies_list(request):
-    companies = Company.objects.get()
-    serializer = CompanySerializer(companies, many = False)
+    companies = Company.objects.all()
+    serializer = CompanySerializer(companies, many = True)
     return Response(serializer.data)
