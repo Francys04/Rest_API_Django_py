@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+""" The pathlib module in Python provides an object-oriented interface to file system paths,
+making it easier to work with file and directory paths."""
 from pathlib import Path
+"""The timedelta class from the datetime module in Python allows you to represent and perform arithmetic 
+operations with time durations. 
+It's useful for tasks like calculating time differences, adding or subtracting time intervals, and more. """
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
