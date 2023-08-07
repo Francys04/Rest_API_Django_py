@@ -17,3 +17,26 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='base.company'),
         ),
     ]
+
+
+"""The migration has a dependency on another migration named 'base', '0002_company'. 
+This suggests that there is a previous migration named 0002_company in the base app. 
+The dependencies list indicates that this migration depends on that previous migration.
+
+The migration contains an operations list, which specifies the database operations to be executed as part of this migration.
+
+Inside the operations list, there is an AddField operation. This operation adds a new field named company to the Advocate model.
+
+The model_name attribute specifies the name of the model to which the field is being added, which is 'advocate'.
+
+The name attribute specifies the name of the new field, which is 'company'.
+
+The field attribute defines the characteristics of the new field. 
+In this case, it is a foreign key field that relates to the 'base.company' model (likely the Company model from a different app).
+
+The blank attribute is set to True, indicating that this field can be left blank (empty).
+
+The null attribute is set to True, allowing the field to be nullable.
+
+The on_delete attribute is set to django.db.models.deletion.SET_NULL, 
+indicating that if a referenced Company is deleted, the value of this field in the Advocate model will be set to NULL."""

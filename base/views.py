@@ -1,22 +1,22 @@
 from django.shortcuts import render, redirect
-# create first views
+"""# create first views"""
 from django.http import JsonResponse
-
-# create rest_api response, decorators for viw and permissions classes for auth
+"""# create rest_api response, decorators for viw and permissions classes for auth"""
 from rest_framework.decorators import api_view, permission_classes
+"""The Response class is a crucial part of DRF and is used to craft and send 
+responses from your API views. It allows you to create consistent and well-structured responses for your API endpoints."""
 from rest_framework.response import Response
-
-# for admin
+"""# for admin"""
 from .models import Advocate, Company
-# serializer
+"""# serializer"""
 from .serializers import AdvocateSerializer, CompanySerializer
-# use Q method for search cahracteres or word in api by http://127.0.0.1:8000/advocates/?query=word_to_find
+"""# use Q method for search cahracteres or word in api by http://127.0.0.1:8000/advocates/?query=word_to_find"""
 from django.db.models import Q
 
-# create APIView base
+"""# create APIView base"""
 from rest_framework.views import APIView
 
-# authentification JWT
+"""# authentification JWT"""
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -110,7 +110,7 @@ def advocate_list(request):
 
 
 
-#another example class based viws, put path in urls.py
+#another example class based views, put path in urls.py
 class AdvocateDetail(APIView):
     def get_object(self, username):
         try:
