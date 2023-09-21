@@ -34,8 +34,6 @@ git clone  https://github.com/Francys04/Rest_API_Django_py
 - cd your-project
 - Create and activate a virtual environment: 
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-- Install project dependencies:
-`pip install -r requirements.txt`
 - Run database migrations:
 `python manage.py migrate`
 - Usage
